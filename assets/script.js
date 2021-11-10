@@ -1,39 +1,72 @@
-// HINT: You can delete this console.log after you no longer need it!
-console.log('JavaScript code has loaded!')
 
-// First, tell us your name
-let yourName = "Justin Whistle" // HINT: Replace this with your own name!
+let yourName = "Justin Whistle" 
 
-// We'll use these variables to track the counts of each cookie type
+// variables
+let qtyGb = document.getElementById('qty-gb')
+let qtyCc = document.getElementById('qty-cc')
+let qtySugar = document.getElementById('qty-sugar')
+let total = document.getElementById('qty-total')
 let gb = 0      // Gingerbread
 let cc = 0      // Chocolate Chip
 let sugar = 0   // Sugar Sprinkle
 
-// Code to update name display 
+// Name display 
 document.getElementById('credit').textContent = `Created by ${yourName}`
 
-// Event listener for clicks on the "+" button for Gingerbread cookies
+// Gingerbread Cookies
 document.getElementById('add-gb').addEventListener('click', function() {
-    console.log('Gingerbread + button was clicked!')
-})
+   if (gb >= 0) {
+       gb++
+    }
+       qtyGb.textContent = gb;
+       total.textContent = gb + cc + sugar;
+    console.log('GB + was clicked')
+})   
+   
 document.getElementById('minus-gb').addEventListener('click', function() {
+    if(gb > 0) {
+        gb--
+    }
+        qtyGb.textContent = gb;
+        total.textContent = gb + cc + sugar;
     console.log('Gingerbread - button was clicked')
 })    
-
+// Chocalate Chip Cookies
 document.getElementById('add-cc').addEventListener('click', function() {
+    if (cc >= 0) {
+        cc++
+    }
+        qtyCc.textContent = cc; 
+        total.textContent = gb + cc + sugar;
     console.log('Chocolate Chip + button was clicked!')   
 })
+
 document.getElementById('minus-cc').addEventListener('click', function() {
+    if (cc > 0) {
+        cc--
+    }
+        qtyCc.textContent = cc; 
+        total.textContent = gb + cc + sugar;
     console.log('Chocolate Chip - button was clicked!')
 })    
-
+// Sugar Cookies
 document.getElementById('add-sugar').addEventListener('click', function() {
+    if (sugar >= 0) {
+        sugar++
+    }
+        qtySugar.textContent = sugar;
+        total.textContent = gb + cc + sugar;
     console.log('Sugar Sprinkle + button was clicked!')   
 })
+
 document.getElementById('minus-sugar').addEventListener('click', function() {
+    if (sugar > 0) {
+        sugar--
+    }
+        qtySugar.textContent = sugar;
+        total.textContent = gb + cc + sugar;
     console.log('Sugar Sprinkle - button was clicked!')
 })    
-    // TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
+   
 
 
-// TODO: Hook up event listeners for the rest of the buttons
